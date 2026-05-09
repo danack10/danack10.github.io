@@ -22,10 +22,10 @@ sections:
         enable: true
         prefix: "I build"
         strings:
-          - "full-stack web apps"
-          - "scalable APIs"
-          - "beautiful UIs"
-          - "open source tools"
+          - "bare-metal Kubernetes clusters"
+          - "Infrastructure as Code"
+          - "GitOps delivery pipelines"
+          - "Automated Cloud-Native Systems"
         type_speed: 70
         delete_speed: 40
         pause_time: 2500
@@ -86,48 +86,34 @@ sections:
     id: skills
     content:
       title: "Tech Stack"
-      subtitle: "Technologies I use to build things"
+      subtitle: "The tools I use to architect and deliver Cloud Native infrastructure"
       categories:
-        - name: Languages
+        - name: Infrastructure & Ops
           items:
-            - name: TypeScript
-              icon: devicon/typescript
-            - name: JavaScript
-              icon: devicon/javascript
-            - name: Python
-              icon: devicon/python
-            - name: Go
-              icon: devicon/go
-        - name: Frontend
-          items:
-            - name: React
-              icon: devicon/react
-            - name: Next.js
-              icon: devicon/nextjs
-            - name: Tailwind CSS
-              icon: devicon/tailwindcss
-            - name: Alpine.js
-              icon: devicon/alpinejs
-        - name: Backend
-          items:
-            - name: Node.js
-              icon: devicon/nodejs
-            - name: Express
-              icon: devicon/express
-            - name: PostgreSQL
-              icon: devicon/postgresql
-            - name: Redis
-              icon: devicon/redis
-        - name: DevOps
-          items:
+            - name: OpenTofu (Terraform)
+              icon: devicon/terraform
+            - name: K3s / Kubernetes
+              icon: devicon/kubernetes
             - name: Docker
-              icon: devicon/docker
-            - name: AWS
-              icon: devicon/amazonwebservices
-            - name: GitHub Actions
-              icon: brands/github
-            - name: Vercel
-              icon: devicon/vercel
+              icon: devicon/docker            
+            - name: Kustomize
+              icon: devicon/kustomize
+            - name: Helm
+              icon: devicon/helm
+            - name: Traefik
+              icon: devicon/traefik
+        - name: CI/CD & Delivery
+          items:
+            - name: Github Actions
+              icon: devicon/github
+            - name: ArgoCD (GitOps)
+              icon: devicon/argocd
+            - name: Git
+              icon: devicon/git
+        - name: Security & Secrets
+          items:
+            - name: HashiCorp Vault
+              icon: devicon/vault
     design:
       style: grid
       show_levels: false
@@ -222,7 +208,7 @@ sections:
       text: |-
         I'm always interested in hearing about new projects and opportunities.
         Whether you're looking to hire, collaborate, or just want to say hi, feel free to reach out!
-      email: alex@example.com
+      email: dananjaya.cahyo.kusumo36@gmail.com
       autolink: true
     design:
       columns: '1'
@@ -238,7 +224,7 @@ sections:
     content:
       title: "Open to Opportunities"
       text: |-
-        I'm currently looking for **senior engineering** or **tech lead** roles.
+        I'm currently looking for **DevOps Engineering** or **DevSecOps Engineering** roles.
         
         Let's connect and discuss how I can help your team.
       button:

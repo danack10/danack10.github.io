@@ -2,99 +2,89 @@ schema: hugoblox/author/v1
 slug: me
 is_owner: true
 name:
-  display: Alex Johnson
-  given: Alex
-  family: Johnson
+  display: Dananjaya Cahyo Kusumo
+  given: Dananjaya
+  family: Cahyo Kusumo
 postnominals: []
 status:
-  icon: "💻"  # Emoji shown on avatar badge: 💻 developer, 🎨 designer, 🚀 startup, 🔬 researcher, 🎓 student
-role: Full-Stack Developer
-email: alex@example.com
+  icon: "⚙️ "
+role: DevOps & Platform Engineer
+email: dananjaya.cahyo.kusumo36@gmail.com
 bio: |
-  Full-stack developer with 5+ years of experience building scalable web applications.
-  Passionate about modern JavaScript, cloud architecture, and creating delightful user experiences.
-
-affiliations:
-  - name: Tech Corp
-    url: https://techcorp.example.com
-
+  Informatics graduate transitioning from offensive security research into Platform Engineering. I leverage an attacker's mindset to architect highly resilient, GitOps-driven Kubernetes infrastructure, building the secure systems I used to test.
+affiliations: []
 links:
   - icon: at-symbol
-    url: mailto:alex@example.com
+    url: mailto:dananjaya.cahyo.kusumo36@gmail.com
     label: E-mail Me
   - icon: brands/github
-    url: https://github.com/alexjohnson
+    url: https://github.com/danack10
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/alexjohnson/
-  - icon: brands/x
-    url: https://x.com/alexjohnson
-
+    url: https://www.linkedin.com/in/danan-jaya-3064832b6/
 interests:
-  - Web Development
-  - Cloud Architecture
-  - Open Source
-  - Developer Experience
-
+  - GitOps & Continuous Delivery
+  - Infrastructure as Code (IaC)
+  - Kubernetes / Cloud Native
+  - Offensive Security & Penetration Testing
 education:
-  - degree: B.S. Computer Science
-    institution: State University
-    start: 2015-09-01
-    end: 2019-05-31
+  - degree: B.S. Computer
+    institution: Telkom University
+    start: 2018-08-01
+    end: 2024-02-26
     summary: |
-      Focus on software engineering and distributed systems.
-      Senior project on distributed caching systems.
-    button:
-      text: View Project
-      url: https://github.com/alexjohnson/senior-project
-      icon: brands/github
-
+      Focus on underlying compute layers, networking, and software engineering.
+      Developed a strong theoretical foundation in how distributed systems operate.
 experience:
-  - role: Senior Software Engineer
-    org: Tech Corp
-    start: 2023-01-01
+  - role: Cloud Native Architecture Build
+    org: Independent DevOps Project
+    start: 2026-01-01
     summary: |
-      Lead development of microservices architecture serving 1M+ users.
-      Improved API response time by 40% through optimization.
-      Mentored team of 5 junior developers.
-  - role: Full-Stack Developer
-    org: Startup Inc
-    start: 2021-06-01
-    end: 2022-12-31
+      Architecting a completely automated, zero-trust Kubernetes environment from bare metal.
+      • Provisioning isolated virtual infrastructure utilizing OpenTofu (Terraform).
+      • Orchestrating container workloads with K3s and managing secure ingress routing via Traefik.
+      • Implementing a Continuous Delivery (CD) GitOps pipeline using Helm and ArgoCD to eliminate manual deployments.
+      • Securing sensitive credentials dynamically using HashiCorp Vault and External Secrets Operator (ESO).
+  - role: Independent Security Researcher
+    org: Bug Bounty Programs
+    start: 2025-01-01
+    end: 2025-12-29
     summary: |
-      Built and deployed 3 production applications from scratch.
-      Implemented CI/CD pipeline reducing deployment time by 60%.
-      Led migration from monolith to microservices architecture.
-  - role: Junior Developer
-    org: Web Agency
-    start: 2020-01-01
-    end: 2021-05-31
-    summary: |
-      Developed client websites using React and modern web technologies.
-      Participated in code reviews and agile ceremonies.
-
+      Conducted offensive security testing and reconnaissance on production web applications.
+      • Developed a deep understanding of common misconfigurations, web vulnerabilities, and the attacker lifecycle.
+      • Utilized standard penetration testing toolsets (Kali Linux) to analyze network traffic and application logic.
+      • Transitioned into DevOps to focus on remediating infrastructure flaws at the root level via Infrastructure as Code.
 skills:
-  - name: Development
+  - name: Infrastructure & Ops
     items:
-      - label: TypeScript
-        level: 5
-      - label: React
-        level: 5
-      - label: Node.js
-        level: 5
-      - label: Python
+      - label: K3s / Kubernetes
         level: 4
-  - name: DevOps
+      - label: OpenTofu (Terraform)
+        level: 4
+      - label: Kali Linux (Kali/Ubuntu)
+        level: 5
+      - label: Traefik
+        level: 4
+  - name: CI/CD & Delivery
     items:
+      - label: ArgoCD (GitOps)
+        level: 5
+      - label: Helm
+        level: 4
       - label: Docker
         level: 4
-      - label: AWS
-        level: 4
-      - label: CI/CD
+      - label: Git
         level: 5
-
+  - name: Security
+    items:
+      - label: HashiCorp Vault + ESO
+        level: 4
+      - label: Penetration Testing
+        level: 3
 languages:
   - name: English
+    level: 4
+    label: Professional
+  - name: Indonesian
     level: 5
     label: Native
-
 awards: []
