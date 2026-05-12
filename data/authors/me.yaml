@@ -7,11 +7,11 @@ name:
   family: Cahyo Kusumo
 postnominals: []
 status:
-  icon: "⚙️ "
-role: DevOps & Platform Engineer
+  icon: "⚙️"
+role: DevSecOps | Platform Engineer
 email: dananjaya.cahyo.kusumo36@gmail.com
 bio: |
-  Computer Science graduate transitioning from offensive security research into DevSecOps and Platform Engineering. Leveraging an attacker’s mindset to architect highly resilient, GitOps-driven Kubernetes infrastructure, building the secure systems I used to test. Currently engineering an end-to-end Cloud Native environment utilizing OpenTofu, ArgoCD, and HashiCorp Vault.
+  Computer Science graduate transitioning from offensive security research into DevSecOps and Platform Engineering. Leveraging an attacker's mindset to architect highly resilient, GitOps-driven Kubernetes infrastructure, building the secure systems I used to test. Currently engineering an end-to-end Cloud Native environment utilizing OpenTofu, ArgoCD, and HashiCorp Vault.
 affiliations: []
 links:
   - icon: at-symbol
@@ -38,7 +38,7 @@ experience:
   - role: Cloud Native Architecture Build
     org: Independent DevOps Project
     start: 2026-01-01
-    end: Present
+    end: ""
     summary: |
       Architecting a completely automated, zero-trust Kubernetes environment from bare metal.
       • Provisioning isolated virtual infrastructure utilizing OpenTofu (Terraform).
