@@ -11,7 +11,7 @@ status:
 role: DevOps & Platform Engineer
 email: dananjaya.cahyo.kusumo36@gmail.com
 bio: |
-  Informatics graduate transitioning from offensive security research into Platform Engineering. I leverage an attacker's mindset to architect highly resilient, GitOps-driven Kubernetes infrastructure, building the secure systems I used to test.
+  Computer Science graduate transitioning from offensive security research into DevSecOps and Platform Engineering. Leveraging an attacker’s mindset to architect highly resilient, GitOps-driven Kubernetes infrastructure, building the secure systems I used to test. Currently engineering an end-to-end Cloud Native environment utilizing OpenTofu, ArgoCD, and HashiCorp Vault.
 affiliations: []
 links:
   - icon: at-symbol
@@ -27,7 +27,7 @@ interests:
   - Kubernetes / Cloud Native
   - Offensive Security & Penetration Testing
 education:
-  - degree: B.S. Computer
+  - degree: B.S. in Computer Science
     institution: Telkom University
     start: 2018-08-01
     end: 2024-02-26
