@@ -38,12 +38,14 @@ experience:
   - role: Cloud Native Architecture Build
     org: Independent DevOps Project
     start: 2026-01-01
+    end: Present
     summary: |
       Architecting a completely automated, zero-trust Kubernetes environment from bare metal.
       • Provisioning isolated virtual infrastructure utilizing OpenTofu (Terraform).
       • Orchestrating container workloads with K3s and managing secure ingress routing via Traefik.
       • Implementing a Continuous Delivery (CD) GitOps pipeline using Helm and ArgoCD to eliminate manual deployments.
       • Securing sensitive credentials dynamically using HashiCorp Vault and External Secrets Operator (ESO).
+
   - role: Freelance Developer
     org: Client Data Management Web Application
     start: 2025-12-01
@@ -52,6 +54,7 @@ experience:
       Developed a custom Google Apps Script solution to streamline client data entry and automate database logging.
       • Engineered a dedicated frontend form that dynamically writes unique client records to the primary Database sheet while simultaneously appending timestamped entries to a separate ClientData log sheet.
       • Troubleshot and mapped correct column logic to ensure robust data integrity between user inputs and database fields.
+
   - role: Independent Security Researcher
     org: Bug Bounty Programs
     start: 2025-01-01
