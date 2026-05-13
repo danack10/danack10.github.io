@@ -19,6 +19,7 @@ links:
     url: https://github.com/danack10/k3s-whatsapp-chatbot
     label: View The Entire Project
 featured: true
+share: false
 status: "In Progress"
 role: "Platform Engineer"
 duration: "Ongoing"
