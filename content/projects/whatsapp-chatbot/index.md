@@ -1,6 +1,6 @@
 ---
 title: "Cloud Native Architecture: Zero-Trust Bare Metal Kubernetes"
-date: 2026-05-15
+date: 2026-01-28
 summary: "End-to-end automated provisioning and GitOps deployment of a secure Kubernetes (K3s) cluster from bare metal."
 tags:
   - Platform Engineering
@@ -19,6 +19,9 @@ links:
     url: https://github.com/danack10/k3s-whatsapp-chatbot
     label: View The Entire Project
 featured: true
+status: "In Progress"
+role: "Platform Engineer"
+duration: "Ongoing"
 ---
 
 An ongoing, 10-phase infrastructure build demonstrating modern DevSecOps principles. This active laboratory project is transforming bare-metal hardware into a highly available, self-healing, and secure Kubernetes environment using GitOps methodologies.
@@ -47,21 +50,19 @@ I wanted to move beyond simple cloud provider tutorials and understand how the u
 
 ## System Architecture
 
-```text
-┌──────────────┐     ┌───────────────┐     ┌───────────────────────┐
-│              │     │               │     │ Kubernetes (K3s)      │
-│  Git Repo    │────▶│    ArgoCD     │────▶│ ┌───────────────────┐ │
-│ (Manifests)  │     │  (Controller) │     │ │  Traefik Ingress  │ │
-│              │     │               │     │ └───────────────────┘ │
-└──────────────┘     └───────────────┘     │ ┌───────────────────┐ │
-                                           │ │ k3s-whatsapp-bot  │ │
-┌──────────────┐     ┌───────────────┐     │ │ (n8n + Postgres)  │ │
-│              │     │   External    │     │ └───────────────────┘ │
-│  HashiCorp   │◀────│    Secrets    │◀────│ ┌───────────────────┐ │
-│    Vault     │     │   Operator    │     │ │   ESO Injector    │ │
-│              │     │               │     │ └───────────────────┘ │
-└──────────────┘     └───────────────┘     └───────────────────────┘
-```
+    ┌──────────────┐     ┌───────────────┐     ┌───────────────────────┐
+    │              │     │               │     │ Kubernetes (K3s)      │
+    │  Git Repo    │────▶│    ArgoCD     │────▶│ ┌───────────────────┐ │
+    │ (Manifests)  │     │  (Controller) │     │ │  Traefik Ingress  │ │
+    │              │     │               │     │ └───────────────────┘ │
+    └──────────────┘     └───────────────┘     │ ┌───────────────────┐ │
+                                               │ │ k3s-whatsapp-bot  │ │
+    ┌──────────────┐     ┌───────────────┐     │ │ (n8n + Postgres)  │ │
+    │              │     │   External    │     │ └───────────────────┘ │
+    │  HashiCorp   │◀────│    Secrets    │◀────│ ┌───────────────────┐ │
+    │    Vault     │     │   Operator    │     │ │   ESO Injector    │ │
+    │              │     │               │     │ └───────────────────┘ │
+    └──────────────┘     └───────────────┘     └───────────────────────┘
 
 ## Engineering Outcomes
 
