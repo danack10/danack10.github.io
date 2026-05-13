@@ -89,5 +89,5 @@ This cluster is designed as a living DevSecOps laboratory. I am currently execut
 - [ ] Deploying Prometheus & Grafana for cluster observability and metric tracking.
 
 **Phase 9-10: Purple Teaming & Detection (📅 Planned)**
-- [ ] **Offensive Simulation**: Executing automated attack paths against the cluster to test resilience.
-- [ ] **Detection Lab**: Building a SIEM pipeline to capture and alert on the offensive testing telemetry.
+- [ ] Offensive Simulation: Executing automated attack paths against the cluster to test resilience.
+- [ ] Detection Lab: Building a SIEM pipeline to capture and alert on the offensive testing telemetry.
