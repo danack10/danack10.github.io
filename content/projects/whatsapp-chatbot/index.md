@@ -84,20 +84,20 @@ To explore the raw code, YAML manifests, and how I solved specific architectural
 This cluster is designed as a living DevSecOps laboratory. I am currently executing Phase 7 of a comprehensive, capability-driven lifecycle.
 
 **Stage I: The Compute Foundation (✅ Completed)**
-- ☑ **Phase 1: Base Compute** - Bare-metal provisioning natively on Kali Linux.
-- ☑ **Phase 2: Declarative Infrastructure** - IaC deployment and state management via OpenTofu.
-- ☑ **Phase 3: Container Orchestration** - High-availability K3s cluster bootstrapping.
-- ☑ **Phase 4: Edge Routing** - Dynamic ingress and load balancing via Traefik.
+- ✅ **Phase 1: Base Compute** - Bare-metal provisioning natively on Kali Linux.
+- ✅ **Phase 2: Declarative Infrastructure** - IaC deployment and state management via OpenTofu.
+- ✅ **Phase 3: Container Orchestration** - High-availability K3s cluster bootstrapping.
+- ✅ **Phase 4: Edge Routing** - Dynamic ingress and load balancing via Traefik.
 
 **Stage II: Automation & Zero-Trust (✅ Completed)**
-- ☑ **Phase 5: Continuous Delivery** - GitOps pipeline established via ArgoCD to eliminate manual drift.
-- ☑ **Phase 6: Ephemeral Secrets** - Zero-trust credential injection via HashiCorp Vault and ESO.
+- ✅ **Phase 5: Continuous Delivery** - GitOps pipeline established via ArgoCD to eliminate manual drift.
+- ✅ **Phase 6: Ephemeral Secrets** - Zero-trust credential injection via HashiCorp Vault and ESO.
 
 **Stage III: Perimeter & Observability (⏳ In Progress)**
-- ☐ **Phase 7: Zero-Trust Perimeter** - Integrating Cloudflare Tunnels for unexposed, secure ingress.
-- ☐ **Phase 8: Full-Stack Telemetry** - Deploying Prometheus & Grafana for cluster observability.
+- ⏳ **Phase 7: Zero-Trust Perimeter** - Integrating Cloudflare Tunnels for unexposed, secure ingress.
+- ⏳ **Phase 8: Full-Stack Telemetry** - Deploying Prometheus & Grafana for cluster observability.
 
 **Stage IV: Purple Teaming Laboratory (📅 Planned)**
-- ☐ **Phase 9: Offensive Simulation (Red)** - Executing automated attack paths against the cluster to validate resilience.
-- ☐ **Phase 10: Threat Detection (Blue)** - Building a SIEM alerting pipeline to capture the offensive testing telemetry.
+- 📅 **Phase 9: Offensive Simulation (Red)** - Executing automated attack paths against the cluster to validate resilience.
+- 📅 **Phase 10: Threat Detection (Blue)** - Building a SIEM alerting pipeline to capture the offensive testing telemetry.
 
