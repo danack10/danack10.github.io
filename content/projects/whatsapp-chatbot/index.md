@@ -75,11 +75,9 @@ I wanted to move beyond simple cloud provider tutorials and understand how the u
 
 To explore the raw code, YAML manifests, and how I solved specific architectural challenges across the lifecycle, read my detailed engineering write-ups:
 
-- 📝 **[Stage I: Architecting a Bare-Metal K3s Foundation](/post/stage-1-compute-foundation/)** *(Deep dive into Phases 1-4: Provisioning Kali Linux via OpenTofu and configuring Traefik ingress).*
-
-- 📝 **[Stage II: GitOps Automation & Ephemeral Secrets](/post/stage-2-automation-zero-trust/)** *(Deep dive into Phases 5-6: Eliminating configuration drift with ArgoCD and injecting HashiCorp Vault via ESO).*
-
-- 📝 **[Stage III: Perimeter Defense & Observability](/post/stage-3-perimeter-observability/)** *(Coming Soon)* *(Deep dive into Phases 7-8: Cloudflare Tunnels and Prometheus/Grafana telemetry).*
+- 📝 **[Stage I: Architecting a Bare-Metal K3s Foundation](/post/stage-1-compute-foundation/)** - *Deep dive into Phases 1-4: Provisioning Kali Linux via OpenTofu and configuring Traefik ingress.*
+- 📝 **[Stage II: GitOps Automation & Ephemeral Secrets](/post/stage-2-automation-zero-trust/)** - *Deep dive into Phases 5-6: Eliminating configuration drift with ArgoCD and injecting HashiCorp Vault via ESO.*
+- 📝 **[Stage III: Perimeter Defense & Observability](/post/stage-3-perimeter-observability/)** (Coming Soon) - *Deep dive into Phases 7-8: Cloudflare Tunnels and Prometheus/Grafana telemetry.*
 
 ## The 10-Phase Engineering Roadmap
 
