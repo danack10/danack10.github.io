@@ -84,27 +84,20 @@ To explore the raw code, YAML manifests, and how I solved specific architectural
 This cluster is designed as a living DevSecOps laboratory. I am currently executing Phase 7 of a comprehensive, capability-driven lifecycle.
 
 **Stage I: The Compute Foundation (✅ Completed)**
-<ul style="list-style-type: none; padding-left: 0;">
-  <li style="margin-bottom: 8px;"><input type="checkbox" checked disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 1: Base Compute</strong> - Bare-metal provisioning natively on Kali Linux.</li>
-  <li style="margin-bottom: 8px;"><input type="checkbox" checked disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 2: Declarative Infrastructure</strong> - IaC deployment and state management via OpenTofu.</li>
-  <li style="margin-bottom: 8px;"><input type="checkbox" checked disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 3: Container Orchestration</strong> - High-availability K3s cluster bootstrapping.</li>
-  <li style="margin-bottom: 8px;"><input type="checkbox" checked disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 4: Edge Routing</strong> - Dynamic ingress and load balancing via Traefik.</li>
-</ul>
+- ☑ **Phase 1: Base Compute** - Bare-metal provisioning natively on Kali Linux.
+- ☑ **Phase 2: Declarative Infrastructure** - IaC deployment and state management via OpenTofu.
+- ☑ **Phase 3: Container Orchestration** - High-availability K3s cluster bootstrapping.
+- ☑ **Phase 4: Edge Routing** - Dynamic ingress and load balancing via Traefik.
 
 **Stage II: Automation & Zero-Trust (✅ Completed)**
-<ul style="list-style-type: none; padding-left: 0;">
-  <li style="margin-bottom: 8px;"><input type="checkbox" checked disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 5: Continuous Delivery</strong> - GitOps pipeline established via ArgoCD to eliminate manual drift.</li>
-  <li style="margin-bottom: 8px;"><input type="checkbox" checked disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 6: Ephemeral Secrets</strong> - Zero-trust credential injection via HashiCorp Vault and ESO.</li>
-</ul>
+- ☑ **Phase 5: Continuous Delivery** - GitOps pipeline established via ArgoCD to eliminate manual drift.
+- ☑ **Phase 6: Ephemeral Secrets** - Zero-trust credential injection via HashiCorp Vault and ESO.
 
 **Stage III: Perimeter & Observability (⏳ In Progress)**
-<ul style="list-style-type: none; padding-left: 0;">
-  <li style="margin-bottom: 8px;"><input type="checkbox" disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 7: Zero-Trust Perimeter</strong> - Integrating Cloudflare Tunnels for unexposed, secure ingress.</li>
-  <li style="margin-bottom: 8px;"><input type="checkbox" disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 8: Full-Stack Telemetry</strong> - Deploying Prometheus & Grafana for cluster observability.</li>
-</ul>
+- ☐ **Phase 7: Zero-Trust Perimeter** - Integrating Cloudflare Tunnels for unexposed, secure ingress.
+- ☐ **Phase 8: Full-Stack Telemetry** - Deploying Prometheus & Grafana for cluster observability.
 
 **Stage IV: Purple Teaming Laboratory (📅 Planned)**
-<ul style="list-style-type: none; padding-left: 0;">
-  <li style="margin-bottom: 8px;"><input type="checkbox" disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 9: Offensive Simulation (Red)</strong> - Executing automated attack paths against the cluster to validate resilience.</li>
-  <li style="margin-bottom: 8px;"><input type="checkbox" disabled style="float: left; margin-top: 6px; margin-right: 10px;"> <strong>Phase 10: Threat Detection (Blue)</strong> - Building a SIEM alerting pipeline to capture the offensive testing telemetry.</li>
-</ul>
+- ☐ **Phase 9: Offensive Simulation (Red)** - Executing automated attack paths against the cluster to validate resilience.
+- ☐ **Phase 10: Threat Detection (Blue)** - Building a SIEM alerting pipeline to capture the offensive testing telemetry.
+
