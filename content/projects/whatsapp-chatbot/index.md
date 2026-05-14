@@ -102,4 +102,3 @@ This cluster is designed as a living DevSecOps laboratory. I am currently execut
 **Stage IV: Purple Teaming Laboratory (📅 Planned)**
 - [ ] **Phase 9: Offensive Simulation (Red)** - Executing automated attack paths against the cluster to validate resilience.
 - [ ] **Phase 10: Threat Detection (Blue)** - Building a SIEM alerting pipeline to capture the offensive testing telemetry.
-
