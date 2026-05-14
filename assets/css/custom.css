@@ -1,0 +1,11 @@
+/* Fix Hugo Blox Task List Checkbox Alignment */
+li.task-list-item {
+    list-style-type: none !important; /* Hides the default bullet point */
+}
+
+li input[type="checkbox"] {
+    float: left !important;
+    margin-right: 10px !important;
+    margin-top: 6px !important; /* Vertically aligns the box with the text */
+    position: relative !important;
+}
