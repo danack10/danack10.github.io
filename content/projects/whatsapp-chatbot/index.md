@@ -71,23 +71,35 @@ I wanted to move beyond simple cloud provider tutorials and understand how the u
 - 🔒 **Security**: Zero hardcoded secrets in the repository; fully ephemeral credential injection using Vault and ESO.
 - 📉 **Configuration Drift**: Reduced to 0% through strict ArgoCD reconciliation loops.
 
+## Technical Deep Dives (Architecture Series)
+
+To explore the raw code, YAML manifests, and how I solved specific architectural challenges across the lifecycle, read my detailed engineering write-ups:
+
+- 📝 **[Stage I: Architecting a Bare-Metal K3s Foundation](/post/stage-1-compute-foundation/)** *(Deep dive into Phases 1-4: Provisioning Kali Linux via OpenTofu and configuring Traefik ingress).*
+
+- 📝 **[Stage II: GitOps Automation & Ephemeral Secrets](/post/stage-2-automation-zero-trust/)** *(Deep dive into Phases 5-6: Eliminating configuration drift with ArgoCD and injecting HashiCorp Vault via ESO).*
+
+- 📝 **[Stage III: Perimeter Defense & Observability](/post/stage-3-perimeter-observability/)** *(Coming Soon)* *(Deep dive into Phases 7-8: Cloudflare Tunnels and Prometheus/Grafana telemetry).*
+
 ## The 10-Phase Engineering Roadmap
 
-This cluster is designed as a living DevSecOps laboratory. I am currently executing Phase 7 of a comprehensive 10-phase build.
+This cluster is designed as a living DevSecOps laboratory. I am currently executing Phase 7 of a comprehensive, capability-driven lifecycle.
 
-**Phase 1-4: The Foundation (✅ Completed)**
-- [x] Bare-metal provisioning natively on Kali Linux.
-- [x] Infrastructure as Code (IaC) deployment via OpenTofu.
-- [x] Kubernetes (K3s) orchestration and Traefik ingress routing.
+**Stage I: The Compute Foundation (✅ Completed)**
+- [x] **Phase 1: Base Compute** - Bare-metal provisioning natively on Kali Linux.
+- [x] **Phase 2: Declarative Infrastructure** - IaC deployment and state management via OpenTofu.
+- [x] **Phase 3: Container Orchestration** - High-availability K3s cluster bootstrapping.
+- [x] **Phase 4: Edge Routing** - Dynamic ingress and load balancing via Traefik.
 
-**Phase 5-6: Automation & Secrets (✅ Completed)**
-- [x] Continuous Delivery pipeline established via ArgoCD (GitOps).
-- [x] Zero-trust secret injection via HashiCorp Vault and External Secrets Operator.
+**Stage II: Automation & Zero-Trust (✅ Completed)**
+- [x] **Phase 5: Continuous Delivery** - GitOps pipeline established via ArgoCD to eliminate manual drift.
+- [x] **Phase 6: Ephemeral Secrets** - Zero-trust credential injection via HashiCorp Vault and ESO.
 
-**Phase 7-8: Edge Security & Observability (⏳ In Progress)**
-- [ ] Integrating Cloudflare Tunnels for secure, unexposed ingress.
-- [ ] Deploying Prometheus & Grafana for cluster observability and metric tracking.
+**Stage III: Perimeter & Observability (⏳ In Progress)**
+- [ ] **Phase 7: Zero-Trust Perimeter** - Integrating Cloudflare Tunnels for unexposed, secure ingress.
+- [ ] **Phase 8: Full-Stack Telemetry** - Deploying Prometheus & Grafana for cluster observability.
 
-**Phase 9-10: Purple Teaming & Detection (📅 Planned)**
-- [ ] Offensive Simulation: Executing automated attack paths against the cluster to test resilience.
-- [ ] Detection Lab: Building a SIEM pipeline to capture and alert on the offensive testing telemetry.
+**Stage IV: Purple Teaming Laboratory (📅 Planned)**
+- [ ] **Phase 9: Offensive Simulation (Red)** - Executing automated attack paths against the cluster to validate resilience.
+- [ ] **Phase 10: Threat Detection (Blue)** - Building a SIEM alerting pipeline to capture the offensive testing telemetry.
+
