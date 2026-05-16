@@ -88,7 +88,7 @@ While Vault securely stores the credentials, my stateful workloads (n8n and Post
 I implemented the **External Secrets Operator (ESO)** to act as an automated courier. It authenticates with Vault, reads the secure payload, and dynamically injects it into a standard native Kubernetes Secret.
 
 ```yaml
---
+---
 # 1. Pulling the static n8n database credentials
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
