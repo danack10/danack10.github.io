@@ -10,8 +10,9 @@ tags:
   - Traefik
   - KVM
 authors:
-  - admin
+  - me
 featured: true
+share: false
 ---
 
 Building Kubernetes in the cloud is easy—cloud providers abstract all the hard networking and compute layers away from you. To truly understand Cloud Native architecture, I decided to build a zero-trust environment from the ground up.
