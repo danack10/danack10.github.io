@@ -88,23 +88,55 @@ While Vault securely stores the credentials, my stateful workloads (n8n and Post
 I implemented the **External Secrets Operator (ESO)** to act as an automated courier. It authenticates with Vault, reads the secure payload, and dynamically injects it into a standard native Kubernetes Secret.
 
 ```yaml
+--
+# 1. Pulling the static n8n database credentials
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: postgres-credentials
+  name: n8n-creds-sync
   namespace: whatsapp-bot
 spec:
   refreshInterval: "1h"
   secretStoreRef:
-    name: vault-backend
+    name: vault-backend-global
     kind: ClusterSecretStore
   target:
-    name: pg-secret-live
+    name: bot-secrets 
   data:
-    - secretKey: POSTGRES_PASSWORD
+    - secretKey: DB_POSTGRESDB_USER
       remoteRef:
-        key: secret/data/chatbot/postgres
-        property: password
+        key: n8n/config
+        property: POSTGRES_USER
+
+    - secretKey: DB_POSTGRESDB_PASSWORD
+      remoteRef:
+        key: n8n/config
+        property: POSTGRES_PASSWORD
+
+    - secretKey: N8N_ENCRYPTION_KEY
+      remoteRef:
+        key: n8n/config
+        property: ENCRYPTION_KEY
+
+---
+# 2. Pulling the dynamic GitHub Token
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: github-token-sync
+  namespace: whatsapp-bot
+spec:
+  refreshInterval: "45m" 
+  secretStoreRef:
+    name: vault-github-backend
+    kind: SecretStore
+  target:
+    name: github-auth-secret
+  data:
+    - secretKey: GITHUB_TOKEN
+      remoteRef:
+        key: github-app/token/whatsapp-bot 
+        property: token
 ```
 
 Because this `ExternalSecret` manifest contains no actual passwords (only reference pointers to Vault), it is perfectly safe to commit to GitHub and deploy via ArgoCD. The n8n and Postgres pods then consume `pg-secret-live` natively.
