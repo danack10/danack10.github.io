@@ -1,5 +1,4 @@
 ---
-
 title: "Stage II: CI/CD Pipeline, GitOps & Ephemeral Secrets"
 date: 2026-05-16
 summary: "A deep dive into Phases 5-6: Building Docker images via GitHub Actions, eliminating configuration drift with ArgoCD, and injecting zero-trust credentials using HashiCorp Vault and ESO."
@@ -10,7 +9,7 @@ tags:
   - GitHub Actions
   - DevSecOps
 authors:
-  - me
+  - admin
 featured: true
 share: false
 ---
@@ -49,11 +48,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: '[https://github.com/danack10/k3s-whatsapp-chatbot.git](https://github.com/danack10/k3s-whatsapp-chatbot.git)'
+    repoURL: 'https://github.com/danack10/k3s-whatsapp-chatbot.git'
     targetRevision: HEAD
     path: apps/whatsapp-bot/base
   destination:
-    server: '[https://kubernetes.default.svc](https://kubernetes.default.svc)'
+    server: 'https://kubernetes.default.svc'
     namespace: whatsapp-bot
   syncPolicy:
     automated:
@@ -87,9 +86,11 @@ While Vault securely stores the credentials, my stateful workloads (n8n and Post
 
 I implemented the **External Secrets Operator (ESO)** to act as an automated courier. It authenticates with Vault, reads the secure payload, and dynamically injects it into a standard native Kubernetes Secret.
 
+Here we define two distinct `ExternalSecret` manifests in a single multi-document YAML file. The first manifest pulls static database credentials, while the second pulls an ephemeral GitHub token:
+
 ```yaml
 ---
-# 1. Pulling the static n8n database credentials
+# 1. Manifest for static n8n database credentials
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
@@ -101,7 +102,7 @@ spec:
     name: vault-backend-global
     kind: ClusterSecretStore
   target:
-    name: bot-secrets 
+    name: bot-secrets
   data:
     - secretKey: DB_POSTGRESDB_USER
       remoteRef:
@@ -119,14 +120,14 @@ spec:
         property: ENCRYPTION_KEY
 
 ---
-# 2. Pulling the dynamic GitHub Token
+# 2. Manifest for dynamic GitHub Token
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
   name: github-token-sync
   namespace: whatsapp-bot
 spec:
-  refreshInterval: "45m" 
+  refreshInterval: "45m"
   secretStoreRef:
     name: vault-github-backend
     kind: SecretStore
@@ -135,7 +136,7 @@ spec:
   data:
     - secretKey: GITHUB_TOKEN
       remoteRef:
-        key: github-app/token/whatsapp-bot 
+        key: github-app/token/whatsapp-bot
         property: token
 ```
 
