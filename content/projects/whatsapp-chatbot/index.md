@@ -13,8 +13,11 @@ tech_stack:
   - K3s
   - ArgoCD & Helm
   - HashiCorp Vault
+  - Cert-Manager
+  - Prometheus & Grafana
+  - Renovate Bot
   - GitHub Actions (CI)
-  - Tailscale
+  - Tailscale & Ngrok
 links:
   - type: github
     url: https://github.com/danack10/k3s-whatsapp-chatbot
@@ -22,11 +25,11 @@ links:
 featured: true
 share: false
 status: "In Progress"
-role: "Platform Engineer"
+role: "DevOps & Platform Engineer"
 duration: "Ongoing"
 ---
 
-An ongoing, 10-phase infrastructure build demonstrating modern DevSecOps principles. This active laboratory project is transforming bare-metal hardware into a highly available, self-healing, and secure Kubernetes environment using GitOps methodologies.
+An ongoing, 10-phase infrastructure build demonstrating modern DevSecOps principles. This active laboratory project showcases how I transform bare-metal hardware into a highly available, self-healing, and secure Kubernetes environment using GitOps methodologies.
 
 ## Overview
 
@@ -35,22 +38,24 @@ I wanted to move beyond simple cloud provider tutorials and understand how the u
 ## Infrastructure Capabilities
 
 ### 1. Virtualized Compute & Zero-Trust Access
-- **KVM Hypervisor** - Ubuntu guest virtual machine running efficiently on a bare-metal Kali Linux host.
+- **KVM Hypervisor** - Ubuntu guest virtual machine running efficiently on my bare-metal Kali Linux host.
 - **Tailscale Mesh VPN** - Hardened, zero-trust SSH access tunnel completely isolating the host from the public internet.
 - **Declarative Provisioning** - Utilizing OpenTofu to dynamically provision and manage the infrastructure state.
 
-### 2. Container Orchestration & Networking
+### 2. Cluster Orchestration & GitOps Automation
 - **K3s Orchestration** - Lightweight, highly available Kubernetes deployment.
-- **Dynamic Ingress** - Traefik configured as the primary ingress controller to manage robust routing and load balancing.
+- **App-of-Apps Paradigm** - Bootstrapping the entire cluster automatically via a single ArgoCD root manifest, managing applications as code.
+- **Dynamic Ingress & Isolated Edge** - Traefik ingress managing routing alongside standalone Cert-Manager TLS distribution, protected by an isolated Ngrok tunnel interface.
 
-### 3. CI/CD & GitOps
+### 3. Supply Chain & CI/CD
 - **Continuous Integration** - GitHub Actions automates the building and pushing of Docker images for immutable rollbacks.
-- **ArgoCD Synchronization** - Cluster state is bound directly to the Git repository using Helm and Kustomize.
-- **Zero Manual Drift** - ArgoCD automatically detects and overwrites any manual changes, enforcing strict GitOps compliance.
+- **Automated Lifecycle** - Renovate Bot continuously monitors dependencies, automatically merging minor patches while holding major releases for my approval.
+- **Zero Manual Drift** - ArgoCD automatically detects and overwrites manual changes, enforcing strict GitOps compliance.
 
-### 4. Secret Management
-- **HashiCorp Vault** - Centralized, encrypted storage for all sensitive credentials and API keys.
+### 4. Secret Management & Telemetry
+- **HashiCorp Vault** - Centralized, encrypted storage for sensitive credentials and API keys.
 - **External Secrets Operator (ESO)** - Dynamically injects Vault secrets directly into Kubernetes pods.
+- **Full-Stack Telemetry** - Dedicated Prometheus and Grafana instance processing cluster metrics.
 
 ## System Architecture
 
@@ -62,24 +67,23 @@ I wanted to move beyond simple cloud provider tutorials and understand how the u
              │ (Updates Manifests)                              │ (Pulls Image)
              ▼                                                  ▼
     ┌──────────────┐     ┌───────────────┐     ┌───────────────────────┐
-    │              │     │               │     │ Kubernetes (K3s)      │
-    │  Git Repo    │────▶│    ArgoCD     │────▶│ ┌───────────────────┐ │
-    │ (Manifests)  │     │  (Controller) │     │ │  Traefik Ingress  │ │
-    │              │     │               │     │ └───────────────────┘ │
-    └──────────────┘     └───────────────┘     │ ┌───────────────────┐ │
-                                               │ │ k3s-whatsapp-bot  │ │
-    ┌──────────────┐     ┌───────────────┐     │ │ (n8n + Postgres)  │ │
-    │              │     │   External    │     │ └───────────────────┘ │
-    │  HashiCorp   │◀────│    Secrets    │◀────│ ┌───────────────────┐ │
-    │    Vault     │     │   Operator    │     │ │   ESO Injector    │ │
-    │              │     │               │     │ └───────────────────┘ │
+    │              │     │  ArgoCD Root  │     │ Kubernetes (K3s)      │
+    │  Git Repo    │────▶│  Bootstrap    │────▶│ ┌───────────────────┐ │
+    │ (Manifests)  │     │ (App-of-Apps) │     │ │  Traefik Ingress  │ │
+    └──────────────┘     └───────────────┘     │ └───────────────────┘ │
+                                               │ ┌───────────────────┐ │
+    ┌──────────────┐     ┌───────────────┐     │ │ k3s-whatsapp-bot  │ │
+    │              │     │   External    │     │ │ (n8n + Postgres)  │ │
+    │  HashiCorp   │◀────│    Secrets    │◀────│ └───────────────────┘ │
+    │    Vault     │     │   Operator    │     │ ┌───────────────────┐ │
+    │              │     │               │     │ │Standalone Cert-Mgr│ │
     └──────────────┘     └───────────────┘     └───────────────────────┘
-    [ Infrastructure: KVM Ubuntu Guest on Kali Metal | Secured via Tailscale ]
+    [ Infrastructure: KVM Ubuntu Guest on Kali Metal | Secured via Tailscale / Ngrok ]
 
 ## Engineering Outcomes
 
-- 🚀 **Full CI/CD**: 100% automated pipeline from code push (GitHub Actions) to cluster synchronization (ArgoCD).
-- 🔒 **Security**: Host isolated via Tailscale; zero hardcoded secrets via Vault and ESO.
+- 🚀 **Full CI/CD**: 100% automated pipeline from code push (GitHub Actions) to cluster synchronization (ArgoCD via App-of-Apps).
+- 🔒 **Security**: Host isolated via Tailscale; public endpoints limited via Ngrok; zero hardcoded secrets via Vault and ESO.
 - 📉 **Configuration Drift**: Reduced to 0% through strict ArgoCD reconciliation loops.
 
 ## Technical Deep Dives (Architecture Series)
@@ -88,12 +92,12 @@ To explore the raw code, YAML manifests, and how I solved specific architectural
 
 - 📝 **[Stage I: Architecting a Bare-Metal KVM & K3s Foundation](/blog/stage-1-compute-foundation/)** - *Deep dive into Phases 1-4: Virtualizing Ubuntu on Kali via KVM, Tailscale SSH tunnels, and OpenTofu provisioning.*
 - 📝 **[Stage II: CI/CD Pipeline, GitOps & Ephemeral Secrets](/blog/stage-2-automation-zero-trust/)** - *Deep dive into Phases 5-6: Docker builds via GitHub Actions, Helm/ArgoCD drift elimination, and Vault/ESO injection.*
-- 📝 **[Stage III: Perimeter Defense & Observability](/blog/stage-3-perimeter-observability/)** (Coming Soon) - *Deep dive into Phases 7-8: Cloudflare Tunnels and Prometheus/Grafana telemetry.*
-- 📝 **[Stage IV: Purple Teaming Laboratory](/blog/stage-4-purple-teaming/)** (Coming Soon) - *Deep dive into Phases 9-10: Executing automated attack paths against the cluster and Building a SIEM alerting pipeline.*
+- 📝 **[Stage III: Cluster Bootstrapping, Public Edge & Infrastructure Observability](/blog/stage-3-perimeter-observability/)** - *Deep dive into Phases 7-8: ArgoCD App-of-Apps bootstrapping, standalone Cert-Manager TLS, and Prometheus/Grafana telemetry.*
+- 📝 **[Stage IV: Purple Teaming Laboratory](/blog/stage-4-purple-teaming/)** - *Deep dive into Phases 9-10: Executing automated attack paths against the cluster and Building a SIEM alerting pipeline.*
 
 ## The 10-Phase Engineering Roadmap
 
-This cluster is designed as a living DevSecOps laboratory. I am currently executing Phase 7 of a comprehensive, capability-driven lifecycle.
+This cluster is designed as my personal DevSecOps laboratory. I am currently executing Phase 9 of a comprehensive, capability-driven lifecycle.
 
 **Stage I: The Compute Foundation (✅ Completed)**
 - ✅ **Phase 1: Base Hypervisor** - Bare-metal Kali Linux hosting KVM.
@@ -105,10 +109,10 @@ This cluster is designed as a living DevSecOps laboratory. I am currently execut
 - ✅ **Phase 5: CI/CD Pipeline** - GitHub Actions building Docker images and ArgoCD/Helm synchronizing the GitOps state.
 - ✅ **Phase 6: Ephemeral Secrets** - Zero-trust credential injection via HashiCorp Vault and ESO.
 
-**Stage III: Perimeter Defense & Observability (⏳ In Progress)**
-- ⏳ **Phase 7: Zero-Trust Perimeter** - Integrating Cloudflare Tunnels for unexposed, secure ingress.
-- ⏳ **Phase 8: Full-Stack Telemetry** - Deploying Prometheus & Grafana for cluster observability.
+**Stage III: Cluster Bootstrapping & Edge Delivery (✅ Completed)**
+- ✅ **Phase 7: Structural Scaling** - Implementing the App-of-Apps bootstrapping pattern and dynamic standalone Cert-Manager TLS distribution.
+- ✅ **Phase 8: Edge Control & Telemetry** - Isolating admin layers via local networks, exposing n8n endpoints via Ngrok tunnels, and deploying Prometheus & Grafana dashboard metrics.
 
-**Stage IV: Purple Teaming Laboratory (📅 Planned)**
-- 📅 **Phase 9: Offensive Simulation (Red)** - Executing automated attack paths against the cluster to validate resilience.
-- 📅 **Phase 10: Threat Detection (Blue)** - Building a SIEM alerting pipeline to capture the offensive testing telemetry.
+**Stage IV: Purple Teaming Laboratory (⏳ In Progress)**
+- ⏳ **Phase 9: Offensive Simulation (Red)** - Simulating attack surfaces against my pods to stress-test routing and secrets.
+- ⏳ **Phase 10: Threat Detection (Blue)** - Aggregating cluster event streams into an analysis stack for security visibility.
