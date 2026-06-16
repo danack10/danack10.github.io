@@ -15,6 +15,10 @@ featured: true
 share: false
 ---
 
+```Markdown
+> 🔄 **Architecture Refactor Note (June 2026):** While this post documents the initial phase of manual K3s installation and base Traefik routing, I have since modularized this entire compute layer. The manual steps below have been completely automated using **OpenTofu** and are now bootstrapped seamlessly via the GitOps App-of-Apps pattern detailed in [Stage III](/blog/stage-3-perimeter-observability/).
+```
+
 Building Kubernetes in the cloud is easy—cloud providers abstract all the hard networking and compute layers away from you. To truly understand Cloud Native architecture, I decided to build a zero-trust environment from the ground up.
 
 This post covers **Stage I** of my 10-Phase Engineering Roadmap: establishing the virtualized compute layer, deploying a zero-trust mesh VPN, bootstrapping the K3s cluster, and configuring edge routing.

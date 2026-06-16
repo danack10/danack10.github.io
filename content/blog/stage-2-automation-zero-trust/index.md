@@ -14,6 +14,10 @@ featured: true
 share: false
 ---
 
+```Markdown
+> 🔄 **Architecture Refactor Note (June 2026):** Since writing this post, the standalone application sync manifests shown below have been integrated into a centralized **Cluster Bootstrap** architecture. This ensures that Vault, ESO, and my database workloads initialize automatically via a single root controller. You can read about this evolution in [Stage III](/blog/stage-3-perimeter-observability/).
+```
+
 With a highly available K3s foundation established on my KVM environment in Stage I, the cluster was functional but not yet "enterprise-grade." Manually applying manifests leads to configuration drift, and standard Kubernetes Secrets violate zero-trust security principles. 
 
 This post covers **Stage II** of the roadmap: establishing a strict CI/CD GitOps pipeline and securing the cluster's sensitive credentials for my stateful workloads (specifically my n8n workflow engine and PostgreSQL database).
