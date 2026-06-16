@@ -1,6 +1,6 @@
 ---
 title: "Cloud Native Architecture: Zero-Trust Bare Metal Kubernetes"
-date: 2026-01-28
+date: 2026-06-16
 summary: "End-to-end automated provisioning and GitOps deployment of a secure Kubernetes (K3s) cluster from bare metal."
 tags:
   - Platform Engineering
@@ -25,7 +25,7 @@ links:
 featured: true
 share: false
 status: "In Progress"
-role: "DevOps & Platform Engineer"
+role: "DevSecOps & Platform Engineer"
 duration: "Ongoing"
 ---
 
@@ -109,10 +109,10 @@ This cluster is designed as my personal DevSecOps laboratory. I am currently exe
 - ✅ **Phase 5: CI/CD Pipeline** - GitHub Actions building Docker images and ArgoCD/Helm synchronizing the GitOps state.
 - ✅ **Phase 6: Ephemeral Secrets** - Zero-trust credential injection via HashiCorp Vault and ESO.
 
-**Stage III: Cluster Bootstrapping & Edge Delivery (✅ Completed)**
-- ✅ **Phase 7: Structural Scaling** - Implementing the App-of-Apps bootstrapping pattern and dynamic standalone Cert-Manager TLS distribution.
-- ✅ **Phase 8: Edge Control & Telemetry** - Isolating admin layers via local networks, exposing n8n endpoints via Ngrok tunnels, and deploying Prometheus & Grafana dashboard metrics.
+**Stage III: Cluster Bootstrapping, Public Edge & Infrastructure Observability (✅ Completed)**
+- ✅ **Phase 7: Structural Scaling** — Refactored the entire cluster deployment to utilize the ArgoCD App-of-Apps bootstrapping paradigm and managed a standalone Cert-Manager instance for dynamic TLS distribution.
+- ✅ **Phase 8: Edge Control & Telemetry** — Enforced a strict zero-trust network perimeter by isolating administrative panels to local networks, exposing the core n8n engine webhooks securely via an Ngrok edge tunnel, and deploying the Prometheus & Grafana telemetry stack.
 
-**Stage IV: Purple Teaming Laboratory (⏳ In Progress)**
-- ⏳ **Phase 9: Offensive Simulation (Red)** - Simulating attack surfaces against my pods to stress-test routing and secrets.
-- ⏳ **Phase 10: Threat Detection (Blue)** - Aggregating cluster event streams into an analysis stack for security visibility.
+**Stage IV: Hardening, Shift-Left & Disaster Recovery (⏳ In Progress)**
+- ⏳ **Phase 9: Shift-Left Security & Resiliency** — Integrating automated static application security testing (SAST) and container vulnerability scanning into the GitHub Actions CI pipeline, alongside deploying Velero for cluster-wide backup, restoration, and disaster recovery.
+- ⏳ **Phase 10: Active Defense & Alerting Architecture** — Configuring Prometheus Alertmanager to catch infrastructure and security anomalies, and engineering automated response pathways to act as a production-grade incident detection system.
