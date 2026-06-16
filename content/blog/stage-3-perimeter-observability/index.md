@@ -1,6 +1,6 @@
 ---
 title: "Stage III: Cluster Bootstrapping, Public Edge & Infrastructure Observability"
-date: 2026-06-15
+date: 2026-06-16
 summary: "A deep dive into Phases 7-8: Implementing the GitOps App-of-Apps pattern, centralizing dynamic TLS with standalone Cert-Manager, deploying Prometheus/Grafana observability, and enforcing automated updates with Renovate Bot."
 tags:
   - GitOps
@@ -237,4 +237,4 @@ The final ingress blueprints verify the secure public-facing management dashboar
 
 ![ArgoCD Cluster Bootstrap](cluster-bootstrap.png)
 
-**Next up:** In Stage IV, I will document how I introduce strict **Shift-Left security scanning** into my CI pipeline, implement enterprise disaster recovery using **Velero**, and configure **Prometheus Alertmanager** to establish an automated incident detection and response ecosystem.
+**Next up:** In [Stage IV](/blog/stage-4-hardening-recovery/), I cover how I introduce strict **Shift-Left security scanning** into my CI pipeline, implement enterprise disaster recovery using **Velero**, and configure **Prometheus Alertmanager** to establish an automated incident detection and response ecosystem.

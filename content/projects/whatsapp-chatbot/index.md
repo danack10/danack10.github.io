@@ -93,7 +93,7 @@ To explore the raw code, YAML manifests, and how I solved specific architectural
 - 📝 **[Stage I: Architecting a Bare-Metal KVM & K3s Foundation](/blog/stage-1-compute-foundation/)** - *Deep dive into Phases 1-4: Virtualizing Ubuntu on Kali via KVM, Tailscale SSH tunnels, and OpenTofu provisioning.*
 - 📝 **[Stage II: CI/CD Pipeline, GitOps & Ephemeral Secrets](/blog/stage-2-automation-zero-trust/)** - *Deep dive into Phases 5-6: Docker builds via GitHub Actions, Helm/ArgoCD drift elimination, and Vault/ESO injection.*
 - 📝 **[Stage III: Cluster Bootstrapping, Public Edge & Infrastructure Observability](/blog/stage-3-perimeter-observability/)** - *Deep dive into Phases 7-8: ArgoCD App-of-Apps bootstrapping, standalone Cert-Manager TLS, and Prometheus/Grafana telemetry.*
-- 📝 **[Stage IV: Purple Teaming Laboratory](/blog/stage-4-purple-teaming/)** - *Deep dive into Phases 9-10: Executing automated attack paths against the cluster and Building a SIEM alerting pipeline.*
+- 📝 **[Stage IV: Hardening, Shift-Left & Disaster Recovery](/blog/stage-4-hardening-recovery/)** - *Deep dive into Phases 9-10: Integrating Shift-Left pipeline scanning, automating cluster recovery with Velero, and engineering incident alerting via Prometheus Alertmanager.*
 
 ## The 10-Phase Engineering Roadmap
 
