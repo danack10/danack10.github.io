@@ -1,6 +1,6 @@
 ---
 title: "Stage II: CI/CD Pipeline, GitOps & Ephemeral Secrets"
-date: 2026-05-16
+date: 2026-06-16
 summary: "A deep dive into Phases 5-6: Building Docker images via GitHub Actions, eliminating configuration drift with ArgoCD, and injecting zero-trust credentials using HashiCorp Vault and ESO."
 tags:
   - GitOps

@@ -1,6 +1,6 @@
 ---
 title: "Stage I: Architecting a Bare-Metal KVM & K3s Foundation"
-date: 2026-05-14
+date: 2026-06-16
 summary: "A deep dive into Phases 1-4 of my DevSecOps laboratory: Virtualizing Ubuntu on a Kali Linux host via KVM, securing access with Tailscale, and bootstrapping K3s with Traefik."
 tags:
   - Platform Engineering
